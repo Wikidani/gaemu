@@ -6,17 +6,23 @@ canvas {
     border: 5px solid #000000;
 }
 
-canvasesdiv {
-    position: relative;
-    width: 400px;
-    height: 300px;
+div {
+display: flex;
+gap: 10px;
 }
 
-layer1 {
-    z-index: 1;
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    height: 300px;
-    width: 400px;
+.right-column {
+    position: fixed;
+    right: 0;
+    top: 0;
+    width: 200px; /* Adjust width as needed */
+    background-color: #4c6463; /* Background color to distinguish the column */
+    padding: 10px;
+    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Optional: adds a shadow effect */
+    display: grid;
+}
+
+.right-column img {
+    width: 100%;
+    margin-bottom: 10px;
 }
