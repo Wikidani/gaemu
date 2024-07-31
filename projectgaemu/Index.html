@@ -13,14 +13,56 @@
 </header>
 
 <body>
+    <div class="right-column">
+        <img src="images/Pistola A.png" alt="Image 1">
+        <img src="images/Cabeza A.png" alt="Image 2">
+        <img src="images/Torso A.png" alt="Image 3">
+    </div>
+
     <canvas id="canvas" width="600" height="600">
         Your browser does not support the HTML canvas tag.
     </canvas>
     <script>
-        const images = [
-            { id: "torso", path: "images/Torso A.png", layer: 1 },
-            { id: "cabeza", path: "images/Cabeza A.png", layer: 2 },
-            { id: "pelo", path: "images/Pelo B.png", layer: 3 }
+        const images = [{
+                id: "cabeza",
+                path: "images/Cabeza A.png",
+                layer: 1
+            },
+            {
+                id: "brazob",
+                path: "images/Brazo A-B.png",
+                layer: 2
+            },
+            {
+                id: "torso",
+                path: "images/Torso A.png",
+                layer: 3
+            },
+            {
+                id: "arma",
+                path: "images/Pistola A.png",
+                layer: 4
+            },
+            {
+                id: "brazof",
+                path: "images/Brazo A-F.png",
+                layer: 5
+            },
+            {
+                id: "pelo",
+                path: "images/Pelo B.png",
+                layer: 6
+            },
+            {
+                id: "oreja",
+                path: "images/Oreja A.png",
+                layer: 7
+            },
+            {
+                id: "cuerno",
+                path: "images/Cuerno A.png",
+                layer: 8
+            }
         ];
         images.sort((a, b) => a.layer - b.layer);
 
@@ -40,7 +82,7 @@
                     tempCanvas.height = image.height;
                     tempCtx.drawImage(image, 0, 0);
                     ctx.drawImage(tempCanvas, 5, 5);
-                };                
+                };
             }
         }
 
