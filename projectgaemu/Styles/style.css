@@ -4,6 +4,8 @@ body {
 
 canvas {
     border: 5px solid #000000;
+    position: relative; 
+    left:0px;
 }
 
 div {
@@ -15,14 +17,20 @@ gap: 10px;
     position: fixed;
     right: 0;
     top: 0;
-    width: 200px; /* Adjust width as needed */
+    width: 50%; /* Adjust width as needed */
     background-color: #4c6463; /* Background color to distinguish the column */
-    padding: 10px;
-    box-shadow: -2px 0 5px rgba(0,0,0,0.1); /* Optional: adds a shadow effect */
     display: grid;
 }
 
 .right-column img {
     width: 100%;
     margin-bottom: 10px;
+    border: solid;
+    border-color: #000000;
+}
+
+header{
+    display: flex;
+    padding: 10px;
+    margin-top: 0px;
 }
