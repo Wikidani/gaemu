@@ -1,0 +1,45 @@
+{
+    "id": 0,
+    "images": [
+        {
+            "id": "cabeza",
+            "path": "images/00/Cabeza A.png",
+            "layer": 1
+        },
+        {
+            "id": "brazob",
+            "path": "images/00/Brazo A-B.png",
+            "layer": 2
+        },
+        {
+            "id": "torso",
+            "path": "images/00/Torso A.png",
+            "layer": 3
+        },
+        {
+            "id": "arma",
+            "path": "images/00/Pistola A.png",
+            "layer": 4
+        },
+        {
+            "id": "brazof",
+            "path": "images/00/Brazo A-F.png",
+            "layer": 5
+        },
+        {
+            "id": "pelo",
+            "path": "images/00/Pelo B.png",
+            "layer": 6
+        },
+        {
+            "id": "oreja",
+            "path": "images/00/Oreja A.png",
+            "layer": 7
+        },
+        {
+            "id": "cuerno",
+            "path": "images/00/Cuerno A.png",
+            "layer": 8
+        }
+    ]
+}

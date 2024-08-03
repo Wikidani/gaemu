@@ -10,7 +10,7 @@
 <header>
     <div class="devMenu">
         <button onclick="canvas()">Try it</button>
-        <button onclick="exportImage()">Export Image</button> 
+        <button onclick="exportImage()">Export Image</button>
     </div>
 </header>
 
@@ -32,53 +32,70 @@
     </div>
 
     <script>
-        const images = [{
+        let charImages = []
+        fetch('chars/00.json') // the value here must be dynamic eventually
+            .then(response => {
+                if (!response.ok) {
+                    throw new Error('Network response was not ok ' + response.statusText);
+                }
+                return response.json();
+            })
+            .then(data => {
+                console.log(data);
+                charImages = data.images;
+            })
+            .catch(error => {
+                console.error('There was a problem with the fetch operation:', error);
+            });
+/*
+        const images = [
+            {
             id: "cabeza",
-            path: "images/Cabeza A.png",
+            path: "images/00/Cabeza A.png",
             layer: 1
         },
         {
             id: "brazob",
-            path: "images/Brazo A-B.png",
+            path: "images/00/Brazo A-B.png",
             layer: 2
         },
         {
             id: "torso",
-            path: "images/Torso A.png",
+            path: "images/00/Torso A.png",
             layer: 3
         },
         {
             id: "arma",
-            path: "images/Pistola A.png",
+            path: "images/00/Pistola A.png",
             layer: 4
         },
         {
             id: "brazof",
-            path: "images/Brazo A-F.png",
+            path: "images/00/Brazo A-F.png",
             layer: 5
         },
         {
             id: "pelo",
-            path: "images/Pelo B.png",
+            path: "images/00/Pelo B.png",
             layer: 6
         },
         {
             id: "oreja",
-            path: "images/Oreja A.png",
+            path: "images/00/Oreja A.png",
             layer: 7
         },
         {
             id: "cuerno",
-            path: "images/Cuerno A.png",
+            path: "images/00/Cuerno A.png",
             layer: 8
         }
         ];
-
+*/
         function canvas() {
             const c = document.getElementById("canvas");
             const ctx = c.getContext("2d");
-            images.sort((a, b) => a.layer - b.layer);
-            images.forEach(img => {
+            charImages.sort((a, b) => a.layer - b.layer);
+            charImages.forEach(img => {
                 const image = new Image();
                 image.src = img.path;
                 image.onload = () => ctx.drawImage(image, 0, 0, c.width, c.height);
@@ -88,9 +105,7 @@
         function exportImage() {
             const c = document.getElementById("canvas");
             const imageData = c.toDataURL();
-
             localStorage.setItem("savedImageData", imageData);
-
             const link = document.createElement('a');
             link.href = imageData;
             link.download = 'exported_image.png';
