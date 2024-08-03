@@ -1,36 +1,31 @@
 body {
-    background-color: gray;
+    background-color: beige;
 }
-
-canvas {
-    border: 5px solid #000000;
-    position: relative; 
-    left:0px;
-}
-
-div {
-display: flex;
-gap: 10px;
-}
-
-.right-column {
-    position: fixed;
-    right: 0;
-    top: 0;
-    width: 50%; /* Adjust width as needed */
-    background-color: #4c6463; /* Background color to distinguish the column */
-    display: grid;
-}
-
-.right-column img {
-    width: 100%;
-    margin-bottom: 10px;
-    border: solid;
-    border-color: #000000;
-}
-
-header{
+.devMenu{
     display: flex;
-    padding: 10px;
-    margin-top: 0px;
+}
+.main{
+    display: flex;
+}
+
+.left {
+    width: 50%;
+    height: 50%;
+    background-color: aquamarine;
+}
+.right {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;}
+
+.right img {
+    width: 100px;
+    border: 1px solid green
+}
+
+#canvas{
+    width: 600px;
+    height: 600px;
+    border: 1px solid red
 }

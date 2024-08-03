@@ -8,62 +8,68 @@
     <link rel="stylesheet" type="text/css" href="Styles/style.css">
 </head>
 <header>
-    <p><button onclick="canvas()">Try it</button></p>
-    <p><button onclick="exportImage()">Export Image</button></p>
+    <div class="devMenu">
+        <p><button onclick="canvas()">Try it</button></p>
+        <p><button onclick="exportImage()">Export Image</button></p>    
+    </div>
 </header>
 
 <body>
-    <div class="right-column">
+    <div class="main">
+        <div class="left">
+            <canvas id="canvas">
+                Your browser does not support the HTML canvas tag.
+            </canvas>
+        </div>
+        <div class="right">
             <img src="images/Pistola A.png" alt="Image 1">
             <img src="images/Cabeza A.png" alt="Image 2">
             <img src="images/Torso A.png" alt="Image 3">
-    </div>
+        </div>
 
-    <canvas id="canvas" width=850 height=850 >
-        Your browser does not support the HTML canvas tag.
-    </canvas>
+    </div>
 
     <script>
         const images = [{
-                id: "cabeza",
-                path: "images/Cabeza A.png",
-                layer: 1
-            },
-            {
-                id: "brazob",
-                path: "images/Brazo A-B.png",
-                layer: 2
-            },
-            {
-                id: "torso",
-                path: "images/Torso A.png",
-                layer: 3
-            },
-            {
-                id: "arma",
-                path: "images/Pistola A.png",
-                layer: 4
-            },
-            {
-                id: "brazof",
-                path: "images/Brazo A-F.png",
-                layer: 5
-            },
-            {
-                id: "pelo",
-                path: "images/Pelo B.png",
-                layer: 6
-            },
-            {
-                id: "oreja",
-                path: "images/Oreja A.png",
-                layer: 7
-            },
-            {
-                id: "cuerno",
-                path: "images/Cuerno A.png",
-                layer: 8
-            }
+            id: "cabeza",
+            path: "images/Cabeza A.png",
+            layer: 1
+        },
+        {
+            id: "brazob",
+            path: "images/Brazo A-B.png",
+            layer: 2
+        },
+        {
+            id: "torso",
+            path: "images/Torso A.png",
+            layer: 3
+        },
+        {
+            id: "arma",
+            path: "images/Pistola A.png",
+            layer: 4
+        },
+        {
+            id: "brazof",
+            path: "images/Brazo A-F.png",
+            layer: 5
+        },
+        {
+            id: "pelo",
+            path: "images/Pelo B.png",
+            layer: 6
+        },
+        {
+            id: "oreja",
+            path: "images/Oreja A.png",
+            layer: 7
+        },
+        {
+            id: "cuerno",
+            path: "images/Cuerno A.png",
+            layer: 8
+        }
         ];
 
         function canvas() {
@@ -73,7 +79,7 @@
             images.forEach(img => {
                 const image = new Image();
                 image.src = img.path;
-                image.onload = () => ctx.drawImage(image, 0, 0, c.width , c.height );
+                image.onload = () => ctx.drawImage(image, 0, 0, c.width, c.height);
             });
         }
 
