@@ -9,20 +9,36 @@ header, .devMenu {
     background-color: #333;
 }
 
+.origin {
+    background-color: darkorange;
+    width: 70%;
+    height: 50%;
+    direction: rtl;
+    overflow-y: auto;
+}
+
+.flavortext {
+    background-color: wheat;
+    margin-top: 10%;
+    width: 70%;
+    height: 50%;
+    border: 2px solid black;
+    text-align: center;
+}
+
 .main {
     display: flex;
-    flex-wrap: wrap;
     justify-content: center;
 }
 
-.left, .right {
+.left, .middle, .right {
     width: 100%;
     max-width: 600px;
     padding: 10px;
     box-sizing: border-box;
 }
 
-.left {
+.middle {
     background-color: aquamarine;
     display: flex;
     justify-content: center;
@@ -36,7 +52,21 @@ header, .devMenu {
     align-items: center;
 }
 
+.left {
+    background-color: lightgray;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .right img {
+    width: 100%;
+    max-width: 100px;
+    border: 1px solid green;
+    margin-bottom: 10px;
+}
+
+.origin img {
     width: 100%;
     max-width: 100px;
     border: 1px solid green;

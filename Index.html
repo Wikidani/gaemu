@@ -17,6 +17,23 @@
 <body>
     <div class="main">
         <div class="left">
+            <div class="origin">  
+                    <img src="images/Pistola A.png" alt="Image 1">
+                    <img src="images/Cabeza A.png" alt="Image 2">
+                    <img src="images/Torso A.png" alt="Image 3">
+                    <img src="images/Pistola A.png" alt="Image 1">
+                    <img src="images/Cabeza A.png" alt="Image 2">
+                    <img src="images/Torso A.png" alt="Image 3">
+            </div>
+            <div class="flavortext">
+                "La información referente al origen, 'flavortext'"
+            </div>
+            <div class="botones" >
+                <button onclick="canvas()">Random</button>
+                <button onclick="clearcanvas()">Reset</button> 
+            </div>
+        </div>
+        <div class="middle">
             <canvas id="canvas">
                 Your browser does not support the HTML canvas tag.
             </canvas>
@@ -97,6 +114,12 @@
             link.textContent = 'Download Image';
             document.body.appendChild(link);
             link.click();
+        }
+
+        function clearcanvas() {
+            const c = document.getElementById("canvas");
+            const ctx = c.getContext("2d");
+            ctx.clearRect(0, 0, c.width, c.height);
         }
     </script>
 </body>
